@@ -2,6 +2,7 @@ package ru.netology;
 
 public class Radio {
     public int currentNumber;
+    public int currentVolume;
 
     public int getCurrentNumber() {
         return currentNumber;
@@ -35,18 +36,16 @@ public class Radio {
         }
     }
 
-    public int currentVolume;
-
     public int getCurrentVolume() {
         return currentVolume;
     }
 
     public void setCurrentVolume(int newCurrentVolume) { // указываем границы диапазона
         if (newCurrentVolume < 0) {
-            currentVolume = 0;
+            newCurrentVolume = 0;
         }
         if (newCurrentVolume > 10) {
-            currentVolume = 10;
+            newCurrentVolume = 10;
         }
         currentVolume = newCurrentVolume;
     }
@@ -55,17 +54,11 @@ public class Radio {
         if (currentVolume < 10) {
             currentVolume = currentVolume + 1;
         }
-        else {
-            currentVolume = 10;
-        }
     }
 
     public void decreaseVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        }
-        else {
-            currentVolume = 0;
         }
     }
 }
