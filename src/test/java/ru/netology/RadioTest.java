@@ -89,7 +89,7 @@ public class RadioTest {
        radio.setCurrentNumber(3);
 
        int expected = 3;
-       int actual = radio.currentNumber;
+       int actual = radio.getCurrentNumber();
 
        Assertions.assertEquals(expected, actual);
    }

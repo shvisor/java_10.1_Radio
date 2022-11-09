@@ -1,12 +1,12 @@
 package ru.netology;
 
 public class Radio {
-    public int currentNumber;
-    public int currentVolume;
-    int minNumber = 0;
-    int maxNumber = 9;
-    int minVolume = 0;
-    int maxVolume = 10;
+    private int currentNumber;
+    private int currentVolume;
+    private int minNumber = 0;
+    private int maxNumber = 9;
+    private int minVolume = 0;
+    private int maxVolume = 10;
 
     public int getCurrentNumber() {
         return currentNumber;
