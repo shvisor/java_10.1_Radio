@@ -4,23 +4,32 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
-    Radio radio = new Radio(30);
+
+    @Test
+    public void shouldDefaultNumber() {
+        Radio radio = new Radio();
+
+        int expected = 10;
+        int actual = radio.getNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldNextNumber() {
-       radio.setCurrentNumber(6);
+        Radio radio = new Radio(6, 8, 30, 0, 29, 0, 100);
 
-       radio.nextNumber();
+        radio.nextNumber();
 
-       int expected = 7;
-       int actual = radio.getCurrentNumber();
+        int expected = 7;
+        int actual = radio.getCurrentNumber();
 
-       Assertions.assertEquals(expected, actual);
-   }
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldNextNumberAfterMax() {
-        radio.setCurrentNumber(29);
+        Radio radio = new Radio(29, 8, 30, 0, 29, 0, 100);
 
         radio.nextNumber();
 
@@ -30,21 +39,21 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-   @Test
-   public void shouldPreviousNumber() {
-       radio.setCurrentNumber(5);
+    @Test
+    public void shouldPreviousNumber() {
+        Radio radio = new Radio(5, 8, 30, 0, 29, 0, 100);
 
-       radio.prevNumber();
+        radio.prevNumber();
 
-       int expected = 4;
-       int actual = radio.getCurrentNumber();
+        int expected = 4;
+        int actual = radio.getCurrentNumber();
 
-       Assertions.assertEquals(expected, actual);
-   }
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldPreviousNumberBeforeMin() {
-        radio.setCurrentNumber(0);
+        Radio radio = new Radio(0, 8, 30, 0, 29, 0, 100);
 
         radio.prevNumber();
 
@@ -53,14 +62,14 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
-
+//
     @Test
     public void shouldNumberAboveMax() {
-        radio.setCurrentNumber(31);
+        Radio radio = new Radio(31, 8, 30, 0, 29, 0, 100);
 
         radio.nextNumber();
 
-        int expected = 1;
+        int expected = 0;
         int actual = radio.getCurrentNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -68,7 +77,7 @@ public class RadioTest {
 
     @Test
     public void shouldNumberBelowMin() {
-        radio.setCurrentNumber(-2);
+        Radio radio = new Radio(-2, 8, 30, 0, 29, 0, 100);
 
         radio.prevNumber();
 
@@ -80,7 +89,7 @@ public class RadioTest {
 
    @Test
    public void shouldSpecificallyNumber () {
-       radio.setCurrentNumber(3);
+       Radio radio = new Radio(3, 8, 30, 0, 29, 0, 100);
 
        int expected = 3;
        int actual = radio.getCurrentNumber();
@@ -90,7 +99,7 @@ public class RadioTest {
 
     @Test
     public void shouldIncreaseVolume() {
-        radio.setCurrentVolume(8);
+        Radio radio = new Radio(3, 8, 30, 0, 29, 0, 100);
 
         radio.increaseVolume();
 
@@ -102,7 +111,7 @@ public class RadioTest {
 
     @Test
     public void shouldDecreaseVolume() {
-        radio.setCurrentVolume(8);
+        Radio radio = new Radio(3, 8, 30, 0, 29, 0, 100);
 
         radio.decreaseVolume();
 
@@ -114,7 +123,7 @@ public class RadioTest {
 
     @Test
     public void shouldIncreaseVolumeMax() {
-        radio.setCurrentVolume(100);
+        Radio radio = new Radio(3, 100, 30, 0, 29, 0, 100);
 
         radio.increaseVolume();
 
@@ -126,7 +135,7 @@ public class RadioTest {
 
     @Test
     public void shouldDecreaseVolumeMin() {
-        radio.setCurrentVolume(0);
+       Radio radio = new Radio(3, 0, 30, 0, 29, 0, 100);
 
         radio.decreaseVolume();
 
@@ -138,7 +147,7 @@ public class RadioTest {
 
     @Test
     public void shouldIncreaseVolumeAboveMax() {
-        radio.setCurrentVolume(102);
+        Radio radio = new Radio(3, 102, 30, 0, 29, 0, 100);
 
         radio.increaseVolume();
 
@@ -150,7 +159,7 @@ public class RadioTest {
 
     @Test
     public void shouldDecreaseVolumeBelowMin() {
-        radio.setCurrentVolume(-3);
+        Radio radio = new Radio(3, -3, 30, 0, 29, 0, 100);
 
         radio.decreaseVolume();
 
