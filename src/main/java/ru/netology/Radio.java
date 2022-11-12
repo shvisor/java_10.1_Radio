@@ -25,8 +25,7 @@ public class Radio {
     public void nextNumber() {
         if (currentNumber < maxNumber) {
             currentNumber = currentNumber + 1;
-        }
-        else {
+        } else {
             currentNumber = minNumber; // переход счетчика после 9 на 0
         }
     }
@@ -34,8 +33,7 @@ public class Radio {
     public void prevNumber() {
         if (currentNumber > minNumber) {
             currentNumber = currentNumber - 1;
-        }
-        else {
+        } else {
             currentNumber = maxNumber; // переход счетчика после 0 на 9
         }
     }

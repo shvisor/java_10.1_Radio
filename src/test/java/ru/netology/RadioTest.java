@@ -5,18 +5,18 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
-   @Test
-   public void shouldNextNumber() {
-       Radio radio = new Radio();
-       radio.setCurrentNumber(6);
+    @Test
+    public void shouldNextNumber() {
+        Radio radio = new Radio();
+        radio.setCurrentNumber(6);
 
-       radio.nextNumber();
+        radio.nextNumber();
 
-       int expected = 7;
-       int actual = radio.getCurrentNumber();
+        int expected = 7;
+        int actual = radio.getCurrentNumber();
 
-       Assertions.assertEquals(expected, actual);
-   }
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldNextNumberAfterMax() {
@@ -31,18 +31,18 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-   @Test
-   public void shouldPreviousNumber() {
-       Radio radio = new Radio();
-       radio.setCurrentNumber(5);
+    @Test
+    public void shouldPreviousNumber() {
+        Radio radio = new Radio();
+        radio.setCurrentNumber(5);
 
-       radio.prevNumber();
+        radio.prevNumber();
 
-       int expected = 4;
-       int actual = radio.getCurrentNumber();
+        int expected = 4;
+        int actual = radio.getCurrentNumber();
 
-       Assertions.assertEquals(expected, actual);
-   }
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldPreviousNumberBeforeMin() {
@@ -83,16 +83,16 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-   @Test
-   public void shouldSpecificallyNumber () {
-       Radio radio = new Radio();
-       radio.setCurrentNumber(3);
+    @Test
+    public void shouldSpecificallyNumber() {
+        Radio radio = new Radio();
+        radio.setCurrentNumber(3);
 
-       int expected = 3;
-       int actual = radio.getCurrentNumber();
+        int expected = 3;
+        int actual = radio.getCurrentNumber();
 
-       Assertions.assertEquals(expected, actual);
-   }
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldIncreaseVolume() {
