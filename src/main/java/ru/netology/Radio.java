@@ -19,8 +19,7 @@ public class Radio {
     public void nextNumber() {
         if (currentNumber < maxNumber) {
             currentNumber = currentNumber + 1;
-        }
-        else {
+        } else {
             currentNumber = getMinNumber(); // переход счетчика после 9 на 0
         }
     }
@@ -28,8 +27,7 @@ public class Radio {
     public void prevNumber() {
         if (currentNumber > minNumber) {
             currentNumber = currentNumber - 1;
-        }
-        else {
+        } else {
             currentNumber = getMaxNumber(); // переход счетчика после 0 на 9
         }
     }
@@ -37,8 +35,7 @@ public class Radio {
     public void increaseVolume() {
         if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
-        }
-        else {
+        } else {
             currentVolume = getMaxVolume();
         }
     }
@@ -46,8 +43,7 @@ public class Radio {
     public void decreaseVolume() {
         if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
-        }
-        else {
+        } else {
             currentVolume = getMinVolume();
         }
     }

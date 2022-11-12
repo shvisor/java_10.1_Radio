@@ -117,15 +117,15 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-   @Test
-   public void shouldSpecificallyNumber () { // передача данных через конструктор
-       Radio radio = new Radio(3, 8, 30, 0, 29, 0, 100);
+    @Test
+    public void shouldSpecificallyNumber() { // передача данных через конструктор
+        Radio radio = new Radio(3, 8, 30, 0, 29, 0, 100);
 
-       int expected = 3;
-       int actual = radio.getCurrentNumber();
+        int expected = 3;
+        int actual = radio.getCurrentNumber();
 
-       Assertions.assertEquals(expected, actual);
-   }
+        Assertions.assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldIncreaseVolume() { // передача данных через конструктор
@@ -193,7 +193,7 @@ public class RadioTest {
 
     @Test
     public void shouldDecreaseVolumeMin() { // передача данных через конструктор
-       Radio radio = new Radio(3, 0, 30, 0, 29, 0, 100);
+        Radio radio = new Radio(3, 0, 30, 0, 29, 0, 100);
 
         radio.decreaseVolume();
 
