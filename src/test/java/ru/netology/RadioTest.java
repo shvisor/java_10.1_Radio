@@ -31,6 +31,19 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldNextNumberDefaultRadio() {
+        Radio radio = new Radio();
+        radio.setCurrentNumber(6);
+
+        radio.nextNumber();
+
+        int expected = 7;
+        int actual = radio.getCurrentNumber();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldPreviousNumber() {
         radio.setCurrentNumber(5);
 
