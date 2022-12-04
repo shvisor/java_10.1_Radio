@@ -7,96 +7,97 @@ public class RadioTest {
     Radio radio = new Radio(30);
 
     @Test
-    public void shouldNextNumber() {
-        radio.setCurrentNumber(6);
+    public void shouldNextStation() {
+        Radio radio = new Radio(30);
+        radio.setCurrentStation(26);
 
-        radio.nextNumber();
+        radio.nextStation();
 
-        int expected = 7;
-        int actual = radio.getCurrentNumber();
+        int expected = 27;
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNextNumberAfterMax() {
-        radio.setCurrentNumber(29);
+    public void shouldNextStationAfterMax() {
+        radio.setCurrentStation(29);
 
-        radio.nextNumber();
+        radio.nextStation();
 
         int expected = 0;
-        int actual = radio.getCurrentNumber();
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNextNumberDefaultRadio() {
+    public void shouldNextStationDefaultRadio() {
         Radio radio = new Radio();
-        radio.setCurrentNumber(6);
+        radio.setCurrentStation(6);
 
-        radio.nextNumber();
+        radio.nextStation();
 
         int expected = 7;
-        int actual = radio.getCurrentNumber();
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldPreviousNumber() {
-        radio.setCurrentNumber(5);
+    public void shouldPreviousStation() {
+        radio.setCurrentStation(5);
 
-        radio.prevNumber();
+        radio.prevStation();
 
         int expected = 4;
-        int actual = radio.getCurrentNumber();
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldPreviousNumberBeforeMin() {
-        radio.setCurrentNumber(0);
+    public void shouldPreviousStationBeforeMin() {
+        radio.setCurrentStation(0);
 
-        radio.prevNumber();
+        radio.prevStation();
 
         int expected = 29;
-        int actual = radio.getCurrentNumber();
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNumberAboveMax() {
-        radio.setCurrentNumber(31);
+    public void shouldStationAboveMax() {
+        radio.setCurrentStation(31);
 
-        radio.nextNumber();
+        radio.nextStation();
 
         int expected = 1;
-        int actual = radio.getCurrentNumber();
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNumberBelowMin() {
-        radio.setCurrentNumber(-2);
+    public void shouldStationBelowMin() {
+        radio.setCurrentStation(-2);
 
-        radio.prevNumber();
+        radio.prevStation();
 
         int expected = 29;
-        int actual = radio.getCurrentNumber();
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldSpecificallyNumber() {
-        radio.setCurrentNumber(3);
+    public void shouldSpecificallyStation() {
+        radio.setCurrentStation(3);
 
         int expected = 3;
-        int actual = radio.getCurrentNumber();
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }

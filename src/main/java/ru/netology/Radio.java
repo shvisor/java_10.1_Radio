@@ -1,48 +1,48 @@
 package ru.netology;
 
 public class Radio {
-    private int currentNumber;
+    private int currentStation;
     private int currentVolume;
-    private int number = 10;
-    private int minNumber = 0;
-    private int maxNumber = minNumber + number - 1;
+    private int numberStation = 10;
+    private int minStation = 0;
+    private int maxStation = numberStation - 1;
     private int minVolume = 0;
     private int maxVolume = 100;
 
-    public Radio(int number) { // конструктор для задания числа радиостанций
-        this.maxNumber = minNumber + number - 1;
+    public Radio(int numberStation) { // конструктор для задания числа радиостанций
+        this.maxStation = numberStation - 1;
     }
 
     public Radio() { // конструктор для задания числа радиостанций по умолчанию
     }
 
-    public int getCurrentNumber() {
-        return currentNumber;
+    public int getCurrentStation() {
+        return currentStation;
     }
 
-    public void setCurrentNumber(int newCurrentNumber) { // указываем границы диапазона
-        if (newCurrentNumber < minNumber) {
+    public void setCurrentStation(int newCurrentStation) { // указываем границы диапазона
+        if (newCurrentStation < minStation) {
             return;
         }
-        if (newCurrentNumber > maxNumber) {
+        if (newCurrentStation > maxStation) {
             return;
         }
-        currentNumber = newCurrentNumber;
+        currentStation = newCurrentStation;
     }
 
-    public void nextNumber() {
-        if (currentNumber < maxNumber) {
-            currentNumber = currentNumber + 1;
+    public void nextStation() {
+        if (currentStation < maxStation) {
+            currentStation = currentStation + 1;
         } else {
-            currentNumber = minNumber; // переход счетчика после 9 на 0
+            currentStation = minStation; // переход счетчика после 9 на 0
         }
     }
 
-    public void prevNumber() {
-        if (currentNumber > minNumber) {
-            currentNumber = currentNumber - 1;
+    public void prevStation() {
+        if (currentStation > minStation) {
+            currentStation = currentStation - 1;
         } else {
-            currentNumber = maxNumber; // переход счетчика после 0 на 9
+            currentStation = maxStation; // переход счетчика после 0 на 9
         }
     }
 
