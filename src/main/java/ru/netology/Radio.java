@@ -57,10 +57,10 @@ public class Radio {
 
     public void setCurrentVolume(int newCurrentVolume) { // указываем границы диапазона
         if (newCurrentVolume < minVolume) {
-            newCurrentVolume = minVolume;
+            return;
         }
         if (newCurrentVolume > maxVolume) {
-            newCurrentVolume = maxVolume;
+            return;
         }
         currentVolume = newCurrentVolume;
     }
@@ -69,11 +69,17 @@ public class Radio {
         if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
+        else {
+            currentVolume = maxVolume;
+        }
     }
 
     public void decreaseVolume() {
         if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
+        }
+        else {
+            currentVolume = minVolume;
         }
     }
 }
