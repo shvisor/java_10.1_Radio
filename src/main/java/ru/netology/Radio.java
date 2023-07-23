@@ -3,14 +3,14 @@ package ru.netology;
 public class Radio {
     private int currentStation;
     private int currentVolume;
-    private int numberStation = 10;
-    private int minStation = 0;
+    private final int numberStation = 10;
+    private final int minStation = 0;
     private int maxStation = numberStation - 1;
-    private int minVolume = 0;
-    private int maxVolume = 100;
+    private final int minVolume = 0;
+    private final int maxVolume = 100;
 
     public Radio(int numberStation) { // конструктор для задания числа радиостанций
-        this.maxStation = numberStation - 1;
+        maxStation = numberStation - 1;
     }
 
     public Radio() { // конструктор для задания числа радиостанций по умолчанию
@@ -45,11 +45,6 @@ public class Radio {
             currentStation = maxStation; // переход счетчика после 0 на 9
         }
     }
-
-//    public Radio(int minVolume, int maxVolume) { // конструктор для задания уровня громкости
-//        this.minVolume = minVolume;
-//        this.maxVolume = maxVolume;
-//    }
 
     public int getCurrentVolume() {
         return currentVolume;
